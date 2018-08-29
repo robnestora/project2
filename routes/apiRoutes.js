@@ -17,7 +17,9 @@ module.exports = function(app) {
 
   // Delete a user by id
   app.delete("/api/driver/:id", function(req, res) {
-    db.Driver.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Driver.destroy({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
       res.json(dbExample);
     });
   });
