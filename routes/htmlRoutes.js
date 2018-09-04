@@ -1,29 +1,26 @@
-var db = require("../models");
+// *********************************************************************************
+// html-routes.js - this file offers a set of routes for sending users to the various html pages
+// *********************************************************************************
 
+// Dependencies
+// =============================================================
+var path = require("path");
+
+// Routes
+// =============================================================
 module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
-    db.Driver.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+  // index route loads view.html
+  // app.get("/", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/index.html"));
+  // });
+
+  // index route loads view.html
+  app.get("/user", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/admin_user.html"));
   });
 
-  // Load example page and pass in an example by id
-  app.get("/driver/:id", function(req, res) {
-    db.Driver.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
-
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
+  // index route loads view.html
+  app.get("/car", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/admin_car.html"));
   });
 };
