@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all driver
   // app.get("/api/driver", function(req, res) {
-  app.get("/", function(req, res) {
+  app.get("/api/drivers", function(req, res) {
     db.Drivers.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
     });
@@ -31,6 +31,12 @@ module.exports = function(app) {
       dbExample
     ) {
       res.json(dbExample);
+    });
+  });
+
+  app.get("/api/cars", function(req, res) {
+    db.Cars.findAll({}).then(function(dbExamples) {
+      res.json(dbExamples);
     });
   });
 
