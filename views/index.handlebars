@@ -1,33 +1,32 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
+  <div id="login-button">
+    <img src="assets/img/login-w-icon-1.png">
   </div>
-</div>
+  <div id="container">
+    <h1>Log In</h1>
+    <span class="close-btn">
+      <img src="assets/img/circle_close_delete_-128.png">
+    </span>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+    <form>
+      <input type="email" name="email" placeholder="E-mail">
+      <input type="password" name="pass" placeholder="Password">
+      <a href="/user">Log in</a>
+      <div id="remember-container">
+        <span id="forgotten">Forgotten password</span>
+      </div>
+    </form>
+  </div>
+
+  <!-- Forgotten Password Container -->
+  <div id="forgotten-container">
+    <h1>Forgotten</h1>
+    <span class="close-btn">
+      <img src="assets/img/circle_close_delete_-128.png">
+    </span>
+
+    <form>
+      <input type="email" name="email" placeholder="E-mail">
+      <a href="#" class="orange-btn">Get new password</a>
+    </form>
+  </div>
+
