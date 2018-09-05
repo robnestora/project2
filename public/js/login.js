@@ -1,4 +1,11 @@
+<<<<<<< HEAD
+console.log("login.js");
+
+$(document).on("click", "#login-button", function() {
+  console.log("logic button");
+=======
 $("#login-button").click(function() {
+>>>>>>> e1bc75ebc63d65e9e9648a61a555431e638e7822
   $("#login-button").fadeOut("slow", function() {
     $("#container").fadeIn();
     TweenMax.from("#container", 0.4, { scale: 0, ease: Sine.easeInOut });

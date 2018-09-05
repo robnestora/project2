@@ -4,6 +4,10 @@ CREATE DATABASE testdrive;
 USE testdrive; 
 CREATE TABLE Drivers (
   id VARCHAR(11) NOT NULL,
+<<<<<<< HEAD
+  userName VARCHAR(45) NOT NULL,
+=======
+>>>>>>> e1bc75ebc63d65e9e9648a61a555431e638e7822
   fullName VARCHAR(45) NOT NULL,
   password VARCHAR(11) NOT NULL,
   phone INT(10) NOT NULL,

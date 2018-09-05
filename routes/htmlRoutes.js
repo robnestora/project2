@@ -4,23 +4,25 @@
 
 // Dependencies
 // =============================================================
-var path = require("path");
+//var path = require("path");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
   // index route loads view.html
-  // app.get("/", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/index.html"));
-  // });
+
+  app.get("/", function(req, res) {
+    console.log("========================");
+    res.render("index");
+  });
 
   // index route loads view.html
   app.get("/user", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/admin_user.html"));
+    res.render("adminuser");
   });
 
   // index route loads view.html
   app.get("/car", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/admin_car.html"));
+    res.render("admincar");
   });
 };

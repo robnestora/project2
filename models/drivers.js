@@ -8,6 +8,10 @@ module.exports = function(sequelize, DataTypes) {
       },
       primaryKey: true
     },
+    userName: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
     fullName: {
       type: DataTypes.TEXT,
       allowNull: false
