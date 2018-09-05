@@ -4,7 +4,7 @@
 
 // Dependencies
 // =============================================================
-var path = require("path");
+//var path = require("path");
 
 // Routes
 // =============================================================
@@ -19,13 +19,10 @@ module.exports = function(app) {
   // index route loads view.html
   app.get("/user", function(req, res) {
     res.render("adminuser");
-
   });
 
   // index route loads view.html
   app.get("/car", function(req, res) {
-
     res.render("admincar");
-
   });
 };
