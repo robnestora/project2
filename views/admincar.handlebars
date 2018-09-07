@@ -82,7 +82,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        {{#each cars}}
+                  <tr>
+                    {{!-- <th scope="row">1</th> --}}
+                    <td>{{this.year}}</td>
+                    <td>{{this.make}}</td>
+                    <td>{{this.model}}</td>
+                    <td>{{this.engine}}</td>
+                    <td>{{this.gasType}}</td>
+                    <td>{{this.id}}</td>
+                    <th scope="col"><button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#editUser">Edit</button></th>
+                    <th scope="col"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteUser">Delete</button></th>
+
+                  </tr>
+        {{/each}}
+        {{!-- <tr>
           <th scope="row">2014</th>
           <td>Mazda</td>
           <td>CX-5</td>
@@ -108,7 +122,7 @@
               <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteUser">Delete</button>
             </th>
             
-          </tr>
+          </tr> --}}
         
       </tbody>
     </table>

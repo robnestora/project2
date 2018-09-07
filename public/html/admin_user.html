@@ -51,26 +51,32 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form method = "post" action="/api/driver?_method=PUT">
                 <div class="form-group">
-                  <input type="text" class="form-control" id="user-name" placeholder="NAME">
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="FULL NAME">
+                  </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="username" name="username" placeholder="NAME">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="driver-license" placeholder="DRIVER LICENSE">
+                  <input type="text" class="form-control" id="driver-license" name="driverlicense" placeholder="DRIVER LICENSE">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="user-phone" placeholder="PHONE">
+                  <input type="text" class="form-control" id="user-phone" name="userphone" placeholder="PHONE">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="user-company" placeholder="COMPANY">
+                  <input type="text" class="form-control" id="user-company" name="usercompany" placeholder="COMPANY">
                 </div>
-      
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn button-new-user">Submit User</button>
+                </div>      
               </form>
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn button-new-user">Submit User</button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -116,6 +122,9 @@
             </div>
             <div class="modal-body">
               <form>
+                  <div class="form-group">
+                      <input type="text" class="form-control" id="test-name" placeholder="TEST NAME">
+                    </div>
                 <div class="form-group">
                   <input type="text" class="form-control" id="user-name" placeholder="NAME">
                 </div>

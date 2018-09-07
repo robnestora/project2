@@ -37,26 +37,32 @@
       </button>
     </div>
     <div class="modal-body">
-      <form>
-        <div class="form-group">
-          <input type="text" class="form-control" id="user-name" placeholder="NAME">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="driver-license" placeholder="DRIVER LICENSE">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="user-phone" placeholder="PHONE">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="user-company" placeholder="COMPANY">
-        </div>
+       <form method = "post" action="/api/driver?_method=PUT">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="FULL NAME">
+                  </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="username" name="username" placeholder="NAME">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="password" name="password" placeholder="PASSWORD">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="driver-license" name="driverlicense" placeholder="DRIVER LICENSE">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="user-phone" name="phone" placeholder="PHONE">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="user-company" name="company" placeholder="COMPANY">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn button-new-user">Submit User</button>
+                </div>      
+        </form>
+    </div>
 
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn button-new-user">Submit User</button>
-    </div>
   </div>
 </div>
 </div>
@@ -72,7 +78,19 @@
           <th scope="col">Delete</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="adminuserTbody">
+         {{#each adminuser}}
+          {{!-- {{> adminuser-block}} --}}
+          <tr>
+            {{!-- <th scope="row">1</th> --}}
+            <th scope="row">1</th>
+            <td>{{this.id}}</td>
+            <td>{{fullName}}</td>
+            <th scope="col"><button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#editUser">Edit</button></th>
+            <th scope="col"><button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteUser">Delete</button></th>
+
+          </tr>
+          {{/each}}
         <tr>
           <th scope="row">1</th>
           <td>Rob2 Nestora</td>
@@ -143,7 +161,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Yes</button>
+        <button type="button" class="btn btn-primary" id="deleteUser">Yes</button>
       </div>
     </div>
   </div>
