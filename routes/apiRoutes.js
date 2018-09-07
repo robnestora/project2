@@ -4,9 +4,21 @@ module.exports = function(app) {
   // Get all driver
   // app.get("/api/driver", function(req, res) {
   app.get("/api/drivers", function(req, res) {
-    db.Drivers.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+    db.Drivers.findAll({})
+      .then(function(adminuser) {
+        res.json(adminuser);
+        // var obj = {
+        //   admin123: data,
+        //   test: "133432432"
+        // };
+        // console.log(
+        //   ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.. " + JSON.stringify(obj)
+        // );
+        // res.json();
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
   });
 
   // Create a new user
@@ -20,9 +32,21 @@ module.exports = function(app) {
     }
     */
     // db.Drivers.create(newDriver).then(function(dbExample) {
-    db.Drivers.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+      console.log("******create user");
+    db.Drivers.create({
+      id: req.body.driverlicense,
+      fullName: req.body.fullname,
+      userName: req.body.username,
+      password: req.body.password,
+      phone: req.body.phone,
+      company: req.body.company
+    }).then(function(dbExample) {
+      // res.json(dbExample);
+      res.redirect("/user");
     });
+    // db.Drivers.create(req.body).then(function(dbExample) {
+    //   res.json(dbExample);
+    // });
   });
 
   // Delete a user by id
